@@ -1,10 +1,10 @@
+// mysql config
 const env2 = require('env2')
 if (process.env.NODE_ENV === 'production') {
-  env2('../.env.prod');
+  env2('../.env.prod')
 } else {
-  env2('../.env');
+  env2('../.env')
 }
-
 const { env } = process
 
 module.exports = {
@@ -16,7 +16,7 @@ module.exports = {
     port: env.MYSQL_PORT,
     dialect: 'mysql',
     operatorsAliases: false,  // 此参数为自行追加，解决高版本 sequelize 连接警告
-  },  
+  },
   production: {
     username: env.MYSQL_USERNAME,
     password: env.MYSQL_PASSWORD,

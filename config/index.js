@@ -1,3 +1,4 @@
+// server config
 const { env } = process
 
 module.exports = {
