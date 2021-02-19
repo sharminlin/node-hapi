@@ -12,13 +12,15 @@ module.exports = [
     config: {
       tags: ['api', G_NAME],
       description: '创建订单',
-      payload: {
-        goodsList: Joi.array().items(
-          Joi.object().keys({
-            goods_id: Joi.number().integer(),
-            count: Joi.number().integer(),
-          })
-        )
+      validate: {
+        payload: {
+          goodsList: Joi.array().items(
+            Joi.object().keys({
+              goods_id: Joi.number().integer(),
+              count: Joi.number().integer(),
+            })
+          )
+        }
       }
     },
   },
