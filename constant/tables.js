@@ -1,3 +1,5 @@
 // table name
-export const TABLE_SHOPS = 'shops'
-export const TABLE_GOODS = 'goods'
+module.exports = {
+  TABLE_SHOPS: 'shops',
+  TABLE_GOODS: 'goods'
+}

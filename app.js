@@ -9,13 +9,15 @@ const Hapi = require('hapi')
 const config = require('./config')
 const routes = require('./routes')
 const pluginsHapiSwagger = require('./plugins/hapi-swagger')
+const pluginsHapiPagination = require('./plugins/hapi-pagination')
 
 const server = new Hapi.Server()
 server.connection(config)
 
 const init = async () => {
   await server.register([
-    ...pluginsHapiSwagger
+    ...pluginsHapiSwagger,
+    pluginsHapiPagination
   ])
 
   server.route(routes)
