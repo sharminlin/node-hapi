@@ -64,6 +64,11 @@ node_modules/.bin/sequelize db:migrate
 node_modules/.bin/sequelize db:migrate:undo
 ```
 
+指定撤销所有迁移，到初始状态：
+
+```
+node_modules/.bin/sequelize db:migrate:undo:all --to xxxxxxxxx-create-shops-table.js
+```
 
 ## 4. 追加字段
 
@@ -82,4 +87,34 @@ module.exports = {
     queryInterface.removeColumn('shops', 'address'),
   ]),
 };
+```
+
+# SEEDS 种子数据
+
+## 1. sequelize seed:create 生成配置文件
+
+```
+node_modules/.bin/sequelize seed:create --name init-shops
+```
+
+## 2. sequelize db:seed:all 执行填充
+
+```
+node_modules/.bin/sequelize db:seed:all
+```
+
+定制执行配置
+
+```
+node_modules/.bin/sequelize db:seed --seed xxxxxxxxx-init-shopsjs
+```
+
+## 3. sequelize db:seed:undo 回退
+
+```
+# 撤销所有的种子
+node_modules/.bin/sequelize db:seed:undo:all
+
+# 撤销指定的种子
+node_modules/.bin/sequelize db:seed:undo --seed XXXXXXXXXXXXXX-demo-user.js
 ```

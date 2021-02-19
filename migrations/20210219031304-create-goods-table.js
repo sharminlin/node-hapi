@@ -1,4 +1,5 @@
 'use strict';
+const { TABLE_GOODS } = require('../constant/tables')
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
@@ -8,7 +9,7 @@ module.exports = {
      * Example:
      * await queryInterface.createTable('users', { id: Sequelize.INTEGER });
      */
-    await queryInterface.createTable('goods', {
+    await queryInterface.createTable(TABLE_GOODS, {
       id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
@@ -35,6 +36,6 @@ module.exports = {
      * Example:
      * await queryInterface.dropTable('users');
      */
-    await queryInterface.dropTable('goods')
+    await queryInterface.dropTable(TABLE_GOODS)
   }
 };
