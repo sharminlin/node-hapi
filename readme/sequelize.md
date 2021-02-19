@@ -106,7 +106,7 @@ node_modules/.bin/sequelize db:seed:all
 定制执行配置
 
 ```
-node_modules/.bin/sequelize db:seed --seed xxxxxxxxx-init-shopsjs
+node_modules/.bin/sequelize db:seed --seed xxxxxxxxx-init-shops.js
 ```
 
 ## 3. sequelize db:seed:undo 回退
